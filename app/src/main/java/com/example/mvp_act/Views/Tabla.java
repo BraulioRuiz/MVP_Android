@@ -3,13 +3,17 @@ package com.example.mvp_act.Views;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.mvp_act.Models.UserLogin;
 import com.example.mvp_act.R;
 
 public class Tabla extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,18 @@ public class Tabla extends AppCompatActivity {
             transaction.replace(R.id.fragment_tabla, f_tabla);
             transaction.commit();
         }
+        Button btn_Crear = findViewById(R.id.btcrearAlumno);
+
+        btn_Crear.setOnClickListener(new android.view.View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View view) {
+                Toast.makeText(Tabla.this, "Creacion seleccionado ", Toast.LENGTH_LONG).show();
+                ActualizarCrearAlumno.accion = 0;
+                Intent intent = new Intent(Tabla.this , ActualizarCrearAlumno.class);
+                startActivity(intent);
+
+            }
+        });
 
     }
 

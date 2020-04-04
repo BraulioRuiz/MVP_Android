@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
+import android.app.ProgressDialog;
 
 import com.example.mvp_act.Models.UserLogin;
 import com.example.mvp_act.Presents.LoginPresent;
@@ -16,6 +18,7 @@ import com.example.mvp_act.R;
 public class Login2 extends AppCompatActivity implements LoginPresent.View {
     EditText username;
     EditText password;
+    ProgressBar bar;
 
 
     private LoginPresent present;
@@ -28,12 +31,14 @@ public class Login2 extends AppCompatActivity implements LoginPresent.View {
 
         username = findViewById(R.id.txtUsername);
         password = findViewById(R.id.txtPassword);
+        bar = findViewById(R.id.progressBar);
         Button btn_aceptar = findViewById(R.id.aceptar);
 
         btn_aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 present.login(username.getText().toString(),password.getText().toString());
+                bar.setVisibility(View.VISIBLE);
 
             }
         });
@@ -50,7 +55,8 @@ public class Login2 extends AppCompatActivity implements LoginPresent.View {
         String username1 = Username;
         UserLogin.token = token1;
         UserLogin.username = username1;
-
+        bar.setVisibility(View.GONE);
+        bar.setVisibility(View.INVISIBLE);
         Intent intent = new Intent(Login2.this , Tabla.class);
         /*intent.putExtra(EXTRA_MESSAGE, username1);
         intent.putExtra(EXTRA_MESSAGE2, token1);*/

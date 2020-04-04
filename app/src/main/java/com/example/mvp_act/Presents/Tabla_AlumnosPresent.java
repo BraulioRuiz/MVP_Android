@@ -16,6 +16,7 @@ public class Tabla_AlumnosPresent {
         void tablaAlert(String text);
         void asignarTabla(ArrayList<Alumno> alumnos);
         void dialogAlumno(Alumno alumno);
+
     }
 
     public void cargarTabla(){
@@ -25,6 +26,10 @@ public class Tabla_AlumnosPresent {
     public void getAlumno(int id){
         Alumno.getAlumno(id, this);
     }
+
+    public void eliminarid(int id){ Alumno.eliminacion(id, this);}
+
+
 
 
 }

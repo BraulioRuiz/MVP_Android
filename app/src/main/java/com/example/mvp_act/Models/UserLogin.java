@@ -17,7 +17,7 @@ public class UserLogin {
         public static String token;
         public static String id;
 
-    private static String url = "http://6448f817.ngrok.io/api/v1/login";
+    private static String url = "http://192.168.1.74:8000/api/v1/login";
 
     public void login(String username, String password , final LoginPresent view){
         String usuario = username;

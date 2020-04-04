@@ -1,6 +1,7 @@
 package com.example.mvp_act.Views;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -36,8 +37,9 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
     private TextView tvApellidos;
     private TextView tvEdad;
     private Button btnAlumno;
-
+    private Button btnEliminar;
     private ViewGroup root;
+    private Button btnActualizar;
 
     private Tabla_AlumnosPresent present;
     public Tabla_Alumnos() {
@@ -69,6 +71,13 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
 
     @Override
     public void asignarTabla(ArrayList<Alumno> alumnos) {
+        int count = tl.getChildCount();
+        if(count>1){
+            for (int i = 1; i < count; i++) {
+                View child = tl.getChildAt(i);
+                tl.removeView(child);
+            }
+        }
         for(int p =0; p < alumnos.size(); p++){
             TableRow tr1 = new TableRow(root.getContext());
             System.out.println(alumnos.get(p).nombre);
@@ -80,23 +89,15 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
             tvNombres.setText(alumnos.get(p).nombre);
             tvNombres.setGravity(Gravity.CENTER);
             tvNombres.setTextColor(Color.BLACK);
-            tvNombres.setPadding(100, 10, 100, 10);
+            tvNombres.setPadding(50, 5, 50, 5);
             tvNombres.setLayoutParams(layoutNombre);
             tr1.addView(tvNombres);
-
-                        /*tvId = new TextView(getActivity());
-                        tvId.setText(alumnos.get(p).id);
-                        tvId.setGravity(Gravity.CENTER);
-                        tvId.setTextColor(Color.BLACK);
-                        tvId.setPadding(150, 10, 150, 10);
-                        tvId.setLayoutParams(layoutNombre);
-                        tr1.addView(tvId);*/
 
             tvApellidos = new TextView(getActivity());
             tvApellidos.setText(alumnos.get(p).apellidos);
             tvApellidos.setGravity(Gravity.CENTER);
             tvApellidos.setTextColor(Color.BLACK);
-            tvApellidos.setPadding(100, 10, 100, 10);
+            tvApellidos.setPadding(50, 5, 50, 5);
             tvApellidos.setLayoutParams(layoutNombre);
             tr1.addView(tvApellidos);
 
@@ -104,7 +105,7 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
             tvEdad.setText(alumnos.get(p).edad);
             tvEdad.setGravity(Gravity.CENTER);
             tvEdad.setTextColor(Color.BLACK);
-            tvEdad.setPadding(100, 10, 100, 10);
+            tvEdad.setPadding(50, 5, 50, 5);
             tvEdad.setLayoutParams(layoutNombre);
             tr1.addView(tvEdad);
 
@@ -113,7 +114,7 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
             btnAlumno.setGravity(Gravity.CENTER);
             btnAlumno.setBackgroundColor(Color.GREEN);
             btnAlumno.setTag(alumnos.get(p).id);
-            btnAlumno.setTextColor(Color.BLACK);
+            btnAlumno.setTextColor(Color.WHITE);
             tr1.addView(btnAlumno);
 
 
@@ -124,6 +125,48 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
                     Toast.makeText(getContext(), "Alumno seleccionado "+ id, Toast.LENGTH_LONG).show();
                     present.getAlumno(id);
                     //getAlumno(id);
+                }
+            });
+
+            btnActualizar = new Button(getActivity());
+            btnActualizar.setText("Actualizar");
+            btnActualizar.setGravity(Gravity.CENTER);
+            btnActualizar.setBackgroundColor(Color.BLUE);
+            btnActualizar.setTag(alumnos.get(p).id);
+            btnActualizar.setTextColor(Color.WHITE);
+            tr1.addView(btnActualizar);
+
+
+            btnActualizar.setOnClickListener(new android.view.View.OnClickListener() {
+                @Override
+                public void onClick(android.view.View view) {
+                    int id = Integer.parseInt(view.getTag().toString());
+                    Toast.makeText(getContext(), "Alumno seleccionado "+ id, Toast.LENGTH_LONG).show();
+                    ActualizarCrearAlumno.accion = 1;
+                    ActualizarCrearAlumno.id = id;
+                    Intent intent = new Intent(getActivity() , ActualizarCrearAlumno.class);
+                    startActivity(intent);
+
+                }
+            });
+
+
+            btnEliminar = new Button(getActivity());
+            btnEliminar.setText("Eliminar");
+            btnEliminar.setGravity(Gravity.CENTER);
+            btnEliminar.setBackgroundColor(Color.RED);
+            btnEliminar.setTag(alumnos.get(p).id);
+            btnEliminar.setTextColor(Color.WHITE);
+            tr1.addView(btnEliminar);
+
+
+            btnEliminar.setOnClickListener(new android.view.View.OnClickListener() {
+                @Override
+                public void onClick(android.view.View view) {
+                    int id = Integer.parseInt(view.getTag().toString());
+                    Toast.makeText(getContext(), "Alumno seleccionado "+ id, Toast.LENGTH_LONG).show();
+                    present.eliminarid(id);
+
                 }
             });
             tl.addView(tr1);
@@ -142,6 +185,7 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
         ;
         builder.create().show();
     }
+
     /*public void getAlumnos(){
         //int childCount = tl.getChildCount();
         // Remove all rows except the first one

@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#23273a"
     tools:context=".Views.Tabla">
 
     <FrameLayout
         android:id="@+id/fragment_tabla"
-        android:layout_width="405dp"
-        android:layout_height="634dp"
+        android:layout_width="416dp"
+        android:layout_height="626dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginEnd="1dp"
@@ -17,7 +18,28 @@
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.346">
 
     </FrameLayout>
+
+    <Button
+        android:id="@+id/btcrearAlumno"
+        style="@android:style/Widget.Holo.Light.Button.Inset"
+        android:layout_width="119dp"
+        android:layout_height="34dp"
+        android:background="#009688"
+        android:text="Crear"
+        tools:layout_editor_absoluteX="292dp"
+        tools:layout_editor_absoluteY="681dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="17dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
