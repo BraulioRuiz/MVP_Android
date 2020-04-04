@@ -47,6 +47,8 @@ public class Login2 extends AppCompatActivity implements LoginPresent.View {
     @Override
     public void loginAlert(String text) {
         Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
+        bar.setVisibility(View.GONE);
+        bar.setVisibility(View.INVISIBLE);
     }
 
     @Override

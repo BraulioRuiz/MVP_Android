@@ -88,31 +88,31 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
             tvNombres = new TextView(getActivity());
             tvNombres.setText(alumnos.get(p).nombre);
             tvNombres.setGravity(Gravity.CENTER);
-            tvNombres.setTextColor(Color.BLACK);
-            tvNombres.setPadding(50, 5, 50, 5);
+            tvNombres.setTextColor(Color.WHITE);
+            tvNombres.setPadding(50, 3, 50, 3);
             tvNombres.setLayoutParams(layoutNombre);
             tr1.addView(tvNombres);
 
             tvApellidos = new TextView(getActivity());
             tvApellidos.setText(alumnos.get(p).apellidos);
             tvApellidos.setGravity(Gravity.CENTER);
-            tvApellidos.setTextColor(Color.BLACK);
-            tvApellidos.setPadding(50, 5, 50, 5);
+            tvApellidos.setTextColor(Color.WHITE);
+            tvApellidos.setPadding(50, 3, 50, 3);
             tvApellidos.setLayoutParams(layoutNombre);
             tr1.addView(tvApellidos);
 
             tvEdad = new TextView(getActivity());
             tvEdad.setText(alumnos.get(p).edad);
             tvEdad.setGravity(Gravity.CENTER);
-            tvEdad.setTextColor(Color.BLACK);
-            tvEdad.setPadding(50, 5, 50, 5);
+            tvEdad.setTextColor(Color.WHITE);
+            tvEdad.setPadding(50, 3, 50, 3);
             tvEdad.setLayoutParams(layoutNombre);
             tr1.addView(tvEdad);
 
             btnAlumno = new Button(getActivity());
-            btnAlumno.setText("Informacion");
+            btnAlumno.setText("Info");
             btnAlumno.setGravity(Gravity.CENTER);
-            btnAlumno.setBackgroundColor(Color.GREEN);
+            btnAlumno.setBackgroundColor(Color.parseColor("#4E7C5B"));
             btnAlumno.setTag(alumnos.get(p).id);
             btnAlumno.setTextColor(Color.WHITE);
             tr1.addView(btnAlumno);
@@ -129,9 +129,9 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
             });
 
             btnActualizar = new Button(getActivity());
-            btnActualizar.setText("Actualizar");
+            btnActualizar.setText("Editar");
             btnActualizar.setGravity(Gravity.CENTER);
-            btnActualizar.setBackgroundColor(Color.BLUE);
+            btnActualizar.setBackgroundColor(Color.parseColor("#28297A"));
             btnActualizar.setTag(alumnos.get(p).id);
             btnActualizar.setTextColor(Color.WHITE);
             tr1.addView(btnActualizar);
@@ -152,9 +152,9 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
 
 
             btnEliminar = new Button(getActivity());
-            btnEliminar.setText("Eliminar");
+            btnEliminar.setText("Borrar");
             btnEliminar.setGravity(Gravity.CENTER);
-            btnEliminar.setBackgroundColor(Color.RED);
+            btnEliminar.setBackgroundColor(Color.parseColor("#FF383E"));
             btnEliminar.setTag(alumnos.get(p).id);
             btnEliminar.setTextColor(Color.WHITE);
             tr1.addView(btnEliminar);

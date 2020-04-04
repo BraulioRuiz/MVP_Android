@@ -103,7 +103,7 @@ public class ActualizarCrearAlumno extends AppCompatActivity implements AlumnoPr
     public void regresar() {
         bar.setVisibility(View.GONE);
         bar.setVisibility(View.INVISIBLE);
-        Intent intent = new Intent(ActualizarCrearAlumno.this , Login2.class);
+        Intent intent = new Intent(ActualizarCrearAlumno.this , Tabla.class);
         startActivity(intent);
     }
 
