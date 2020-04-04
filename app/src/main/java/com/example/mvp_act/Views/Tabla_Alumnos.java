@@ -89,7 +89,7 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
             tvNombres.setText(alumnos.get(p).nombre);
             tvNombres.setGravity(Gravity.CENTER);
             tvNombres.setTextColor(Color.WHITE);
-            tvNombres.setPadding(50, 3, 50, 3);
+            tvNombres.setPadding(25, 3, 25, 3);
             tvNombres.setLayoutParams(layoutNombre);
             tr1.addView(tvNombres);
 
@@ -97,7 +97,7 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
             tvApellidos.setText(alumnos.get(p).apellidos);
             tvApellidos.setGravity(Gravity.CENTER);
             tvApellidos.setTextColor(Color.WHITE);
-            tvApellidos.setPadding(50, 3, 50, 3);
+            tvApellidos.setPadding(25, 3, 25, 3);
             tvApellidos.setLayoutParams(layoutNombre);
             tr1.addView(tvApellidos);
 
@@ -105,7 +105,7 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
             tvEdad.setText(alumnos.get(p).edad);
             tvEdad.setGravity(Gravity.CENTER);
             tvEdad.setTextColor(Color.WHITE);
-            tvEdad.setPadding(50, 3, 50, 3);
+            tvEdad.setPadding(25, 3, 25, 3);
             tvEdad.setLayoutParams(layoutNombre);
             tr1.addView(tvEdad);
 
@@ -115,6 +115,8 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
             btnAlumno.setBackgroundColor(Color.parseColor("#4E7C5B"));
             btnAlumno.setTag(alumnos.get(p).id);
             btnAlumno.setTextColor(Color.WHITE);
+            btnAlumno.setHeight(30);
+            btnAlumno.setWidth(100);
             tr1.addView(btnAlumno);
 
 
@@ -134,6 +136,8 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
             btnActualizar.setBackgroundColor(Color.parseColor("#28297A"));
             btnActualizar.setTag(alumnos.get(p).id);
             btnActualizar.setTextColor(Color.WHITE);
+            btnActualizar.setHeight(30);
+            btnActualizar.setWidth(100);
             tr1.addView(btnActualizar);
 
 
@@ -157,6 +161,8 @@ public class Tabla_Alumnos extends Fragment implements Tabla_AlumnosPresent.View
             btnEliminar.setBackgroundColor(Color.parseColor("#FF383E"));
             btnEliminar.setTag(alumnos.get(p).id);
             btnEliminar.setTextColor(Color.WHITE);
+            btnEliminar.setHeight(30);
+            btnEliminar.setWidth(100);
             tr1.addView(btnEliminar);
 
 

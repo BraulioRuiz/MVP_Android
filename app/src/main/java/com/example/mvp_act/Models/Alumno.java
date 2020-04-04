@@ -25,7 +25,9 @@ public class Alumno {
     private static ArrayList <Alumno> alumnos;
     private static Alumno alumno;
 
-    private static String url = "http://192.168.1.74:8000/api/v1/";
+    //private static String url = "http://192.168.1.74:8000/api/v1/";
+    private static String url = "http://26dbcd4b.ngrok.io/api/v1/";
+
     @Override
     public String toString(){
         return "nombre: "+ nombre + " ID: " + id;

@@ -31,7 +31,9 @@ public class Carrera {
         return "nombre: "+ nombre + " ID: " + id;
     }
 
-    private static String url = "http://192.168.1.74:8000/api/v1/";
+    //private static String url = "http://192.168.1.74:8000/api/v1/";
+    private static String url = "http://26dbcd4b.ngrok.io/api/v1/";
+
     public static void getCarreras(final Tabla_MateriaPresent view){
 
         AsyncHttpClient client = new AsyncHttpClient();
